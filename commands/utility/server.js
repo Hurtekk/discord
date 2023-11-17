@@ -12,7 +12,6 @@ module.exports = {
 			.addFields(
 				{ name: 'ID', value: interaction.guild.id },
 				{ name: 'Member Count', value: String(interaction.guild.memberCount - interaction.guild.members.cache.filter(member => member.user.bot).size) },
-				{ name: 'Server Join Date', value: moment.utc(interaction.user.joinedAt).format("dddd, MMMM Do YYYY") },
 			)
 			.setThumbnail(interaction.guild.iconURL() )
 			.setTimestamp()
