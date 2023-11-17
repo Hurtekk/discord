@@ -1,17 +1,9 @@
 const {CommandInteraction} = require('discord.js');
 
 module.exports = {
-    name: "interactionCreate",
+    name: "messageReactionAdd",
 
-    async execute(interaction, client) {
-        if(!interaction.isChatInputCommand()) return;
-
-        const command = client.commands.get(interaction.commandName);
-
-        if (!command) {
-            interaction.reply({content: "outdated command"});
-        }
-
+    async execute(reaction, user) {
         command.execute(interaction, client);
 
         const { commandName } = interaction;

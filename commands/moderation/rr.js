@@ -1,12 +1,21 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("greet")
-        .setDescription("Greet the user and add a reaction."),
+        .setName("rrtest")
+        .setDescription("test"),
     async execute(interaction) {
-        // Odpowiedź tekstem
-        await interaction.reply({ content: "Hello! I hope you're having a great day. 😊"}); 
+        const confirm = new ButtonBuilder()
+            .setCustomId('addRole')
+            .setLabel('Add Role')
+            .setStyle(ButtonStyle.Secondary);
+        
+        const row = new ActionRowBuilder()
+			.addComponents(confirm); 
+
+            await interaction.reply({
+                components: [row],
+            });
     }
 };
 
