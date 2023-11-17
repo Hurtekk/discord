@@ -5,17 +5,17 @@ module.exports = {
         .setName("rrtest")
         .setDescription("test"),
     async execute(interaction) {
-        const confirm = new ButtonBuilder()
+        const addRole = new ButtonBuilder()
             .setCustomId('addRole')
             .setLabel('Add Role')
             .setStyle(ButtonStyle.Secondary);
-        
-        const row = new ActionRowBuilder()
-			.addComponents(confirm); 
 
-            await interaction.reply({
-                components: [row],
-            });
+        const row = new ActionRowBuilder()
+            .addComponents(addRole);
+
+        await interaction.reply({
+            components: [row],
+        });
     }
 };
 
