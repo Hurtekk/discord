@@ -1,14 +1,9 @@
 const { Client } = require('discord.js');
 
 module.exports = {
-    name: 'messageCreate',
+    name: 'messageUpdate',
     on: true,
-    execute(message) {
-        const messageChannel = message.guild.channels.cache.get('1170073523801301002');
-        if (message.content === "tak") {
-            messageChannel.send("nie");
-        }
-
+    execute(oldMessage, newMessage) {
         const badWords = ['chuj', 'chuja', 'chujek', 'chuju', 'chujem', 'chujnia',
             'chujowy', 'chujowa', 'chujowe', 'cipa', 'cipę', 'cipe', 'cipą',
             'cipie', 'dojebać', 'dojebac', 'dojebie', 'dojebał', 'dojebal',
@@ -189,10 +184,9 @@ module.exports = {
             "tw4t", "twat", "twathead", "twatty", "twunt", "twunter", "v14gra", "v1gra", "vagina", "viagra", "vulva",
             "w00se", "wang", "wank", "wanker", "wanky", "whoar", "whore", "willies", "willy", "xrated", "xxx", "kys", "fvck"];
 
-        if (badWords.some(word => message.content.toLowerCase().includes(word.toLowerCase()))) {
-            // Usuń wiadomość
-            message.delete()
-                .catch(console.error);
-        }
+            if (badWords.some((slowo) => newMessage.content.includes(slowo))) {
+                // Usuń wiadomość
+                newMessage.delete();
+              }
     }
 }
