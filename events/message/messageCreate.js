@@ -194,7 +194,7 @@ module.exports = {
 
         if (badWords.some(word => message.content.toLowerCase().includes(word.toLowerCase()))) {
             // Usuń wiadomość
-            message.bulkDelete()
+            message.delete()
                 .catch(console.error);
         }
     }
