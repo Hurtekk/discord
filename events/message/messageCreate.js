@@ -5,7 +5,6 @@ const moment = require('moment');
 module.exports = {
     name: 'messageCreate',
     on: true,
-    cooldown: 60000,
     execute(message) {
         const messageChannel = message.guild.channels.cache.get('1170073523801301002');
         if (message.content === "tak") {
