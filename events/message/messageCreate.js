@@ -11,18 +11,6 @@ module.exports = {
         if (message.content === "tak") {
             messageChannel.send("nie");
         }
-        const handleTime = (timestamp) => moment(timestamp).format("DD/MM/YYYY - hh:mm:ss a").replace("pm", "PM").replace("am", "AM");
-        const attachment = message.attachments.first();
-
-        if (message.content === "") {
-            fs.appendFile('./logs/messagesLogs.txt', `${handleTime(message.timestamp)} ${message.author.username} : ${attachment.name} ${attachment.url + '\n'}`, (err) => {
-                if (err) throw err;
-            });
-        } else {
-            fs.appendFile('./logs/messagesLogs.txt', `${handleTime(message.timestamp)} ${message.author.username} : ${message.content + '\n'}`, (err) => {
-                if (err) throw err;
-            });
-        }
 
         const badWords = ['chuj', 'chuja', 'chujek', 'chuju', 'chujem', 'chujnia',
             'chujowy', 'chujowa', 'chujowe', 'cipa', 'cipę', 'cipe', 'cipą',
@@ -206,7 +194,7 @@ module.exports = {
 
         if (badWords.some(word => message.content.toLowerCase().includes(word.toLowerCase()))) {
             // Usuń wiadomość
-            message.delete()
+            message.bulkDelete()
                 .catch(console.error);
         }
     }

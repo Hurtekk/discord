@@ -13,5 +13,9 @@ module.exports = {
             .setTimestamp();
 
         welcomeChannel.send({ embeds: [welcomeEmbed] });
+
+        const role = member.guild.roles.cache.find(r => r.name === 'User');
+
+        member.roles.add(role);
     }
 };
