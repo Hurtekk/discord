@@ -193,8 +193,8 @@ module.exports = {
 
         const messageEditedEmbed = new EmbedBuilder()
             .setColor('#a25cf7')
-            .setAuthor({name: 'Message Edited'})
-            .setDescription(`Message Before: ${oldMessage.content}\nMessage After: ${newMessage.content}\nMessage author: <@${user.id}>`)
+            .setAuthor({name: 'Message Edited |♻️|'})
+            .setDescription(`Message Before: \`${oldMessage.content}\`\nMessage After: \`${newMessage.content}\`\nMessage author: <@${user.id}>`)
             .setTimestamp();
 
         logChannel.send({ embeds: [messageEditedEmbed] });

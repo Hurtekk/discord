@@ -9,8 +9,8 @@ module.exports = {
 
         const messageDeleteEmbed = new EmbedBuilder()
             .setColor('#cc3131')
-            .setAuthor({name: 'Message Deleted'})
-            .setDescription(`Message content: ${message.content}\nMessage author: <@${user.id}>`)
+            .setAuthor({name: `Message Deleted |❌|`})
+            .setDescription(`Message content: \`${message.content}\`\nMessage author: <@${user.id}>`)
             .setTimestamp();
 
         logChannel.send({ embeds: [messageDeleteEmbed] });
