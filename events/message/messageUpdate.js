@@ -10,9 +10,11 @@ module.exports = {
         const messageEditedEmbed = new EmbedBuilder()
             .setColor('#a25cf7')
             .setAuthor({name: 'Message Edited |♻️|'})
-            .setDescription(`Message Before: \`${oldMessage.content}\`\nMessage After: \`${newMessage.content}\`\nMessage author: <@${user.id}>`)
+            .setDescription(`Message Before: \`${oldMessage.content}\`\nMessage After: \`${newMessage.content}\`\nMessage author: <@${user.id}>\nChannel: <#${newMessage.channel.id}>`)
             .setTimestamp();
 
-        logChannel.send({ embeds: [messageEditedEmbed] });
+        if(!newMessage.author.bot){
+            logChannel.send({ embeds: [messageEditedEmbed] });
+        }
     }
 }
