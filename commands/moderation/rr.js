@@ -1,4 +1,4 @@
-const { ActionRowBuilder, SelectMenuBuilder, SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -8,6 +8,7 @@ module.exports = {
     async execute(interaction) {
         const select = new StringSelectMenuBuilder()
             .setCustomId('Select Menu')
+            .setMinValues(1)
             .setPlaceholder('Make a selection!')
             .addOptions(
                 new StringSelectMenuOptionBuilder()
@@ -23,6 +24,14 @@ module.exports = {
                     .setDescription('test')
                     .setValue('option 3'),
             );
+
+        const row = new ActionRowBuilder()
+            .addComponents(select);
+
+        await interaction.reply({
+            content: 'Choose role',
+            components: [row],
+        });
     },
 };
 

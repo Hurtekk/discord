@@ -15,6 +15,8 @@ client.commands = new Collection();
 client.cooldowns = new Collection();
 client.config = require('./config.json');
 
+tooken = 'MTE3NTUyMzE0MTY3ODgwMDkyNw.G3oYEQ.UJOdcUPVdkt2iM1-Zc8Zj3cwUgVE0kkRJQtAkY';
+
 client.login(client.config.token).then(() => {
     loadEvents(client);
     loadCommands(client);
