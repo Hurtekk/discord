@@ -1,4 +1,4 @@
-const { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { ActionRowBuilder, SelectMenuBuilder, SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -6,17 +6,23 @@ module.exports = {
         .setDescription("test")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     async execute(interaction) {
-        const addRole = new ButtonBuilder()
-            .setCustomId('addRole')
-            .setLabel('Add Role')
-            .setStyle(ButtonStyle.Secondary);
-
-        const row = new ActionRowBuilder()
-            .addComponents(addRole);
-
-        await interaction.reply({
-            components: [row],
-        });
-    }
+        const select = new StringSelectMenuBuilder()
+            .setCustomId('Select Menu')
+            .setPlaceholder('Make a selection!')
+            .addOptions(
+                new StringSelectMenuOptionBuilder()
+                    .setLabel('Option 1')
+                    .setDescription('test')
+                    .setValue('option 1'),
+                new StringSelectMenuOptionBuilder()
+                    .setLabel('Option 2')
+                    .setDescription('test')
+                    .setValue('option 2'),
+                new StringSelectMenuOptionBuilder()
+                    .setLabel('Option 3')
+                    .setDescription('test')
+                    .setValue('option 3'),
+            );
+    },
 };
 
