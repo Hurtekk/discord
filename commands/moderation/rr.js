@@ -7,7 +7,7 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     async execute(interaction) {
         const select = new StringSelectMenuBuilder()
-            .setCustomId('Select Menu')
+            .setCustomId('rr')
             .setMinValues(1)
             .setPlaceholder('Make a selection!')
             .addOptions(
@@ -29,7 +29,7 @@ module.exports = {
             .addComponents(select);
 
         await interaction.reply({
-            content: 'Choose role',
+            content: 'Choose',
             components: [row],
         });
     },
