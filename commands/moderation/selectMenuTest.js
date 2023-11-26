@@ -2,7 +2,7 @@ const { ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("rrtest")
+        .setName("selectmenu")
         .setDescription("test")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     async execute(interaction) {
@@ -14,15 +14,23 @@ module.exports = {
                 new StringSelectMenuOptionBuilder()
                     .setLabel('Option 1')
                     .setDescription('test')
-                    .setValue('option 1'),
+                    .setValue('option1'),
                 new StringSelectMenuOptionBuilder()
                     .setLabel('Option 2')
                     .setDescription('test')
-                    .setValue('option 2'),
+                    .setValue('option2'),
                 new StringSelectMenuOptionBuilder()
-                    .setLabel('Option 3')
+                    .setLabel('Option3')
                     .setDescription('test')
-                    .setValue('option 3'),
+                    .setValue('option3'),
+                new StringSelectMenuOptionBuilder()
+                    .setLabel('Option4')
+                    .setDescription('test')
+                    .setValue('option4'),
+                new StringSelectMenuOptionBuilder()
+                    .setLabel('Option5')
+                    .setDescription('test')
+                    .setValue('option5'),
             );
 
         const row = new ActionRowBuilder()
