@@ -1,4 +1,4 @@
-const { Client } = require('discord.js');
+const { Client, ActivityType } = require('discord.js');
 const mongoose = require('mongoose');
 const config = require('../../config.json');
 
@@ -14,5 +14,10 @@ module.exports = {
         }
 
         console.log(`${client.user.tag} is now online.`);
+        client.user.setActivity({ 
+            name: "Minevalik",
+            type: ActivityType.Watching, 
+            url: 'https://www.youtube.com/channel/UCOQYccq6nFPCdliE12Ux1cg',
+         });
     }
 }
