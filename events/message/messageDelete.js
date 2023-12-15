@@ -10,7 +10,7 @@ module.exports = {
         const messageDeleteEmbed = new EmbedBuilder()
             .setColor('#cc3131')
             .setAuthor({name: `Message Deleted |❌|`})
-            .setDescription(`Message content: \`${message.content}\`\nMessage author: <@${user.id}>\nChannel: <#${message.channel.id}>`)
+            .setDescription(`Message content: \`${message.content}\`\nMessage author: <@!${user.id}>\nChannel: <#${message.channel.id}>`)
             .setTimestamp()
 
         if(!message.author.bot){

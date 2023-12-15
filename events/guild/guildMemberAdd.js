@@ -9,7 +9,7 @@ module.exports = {
         const welcomeEmbed = new EmbedBuilder()
             .setColor('#424cdb')
             .setAuthor({name: 'User Joined!', iconURL: member.user.displayAvatarURL()})
-            .setDescription(`Welcome <@${member.id}> to **${guild.name}**.\nWe now have [\`${guild.memberCount}\`] members!`)
+            .setDescription(`Welcome <@!${member.id}> to **${guild.name}**.\nWe now have [\`${guild.memberCount}\`] members!`)
             .setTimestamp();
 
         welcomeChannel.send({ embeds: [welcomeEmbed] });
