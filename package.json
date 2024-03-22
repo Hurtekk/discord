@@ -14,9 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "ascii-table": "^0.0.9",
+    "discord": "^0.8.2",
     "discord.js": "^14.14.1",
     "moment": "^2.29.4",
-    "mongodb": "^6.3.0",
+    "mongodb": "^6.5.0",
     "mongoose": "^8.0.1"
   }
 }

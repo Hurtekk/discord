@@ -4,7 +4,7 @@ module.exports = {
     name: "guildMemberAdd",
     execute(member) {
         const { user, guild } = member;
-        const welcomeChannel = member.guild.channels.cache.get('1159608455125020742');
+        const welcomeChannel = member.guild.channels.cache.get('1220675865159929877');
 
         const welcomeEmbed = new EmbedBuilder()
             .setColor('#424cdb')
