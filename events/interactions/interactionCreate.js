@@ -4,6 +4,7 @@ module.exports = {
     name: "interactionCreate",
 
     async execute(interaction, client) {
+        if (!interaction.isChatInputCommand()) return;
         if (!interaction.isCommand() && !interaction.isStringSelectMenu()) {
             return interaction.reply({ content: "Command not found or invalid interaction.", ephemeral: true });
         }
